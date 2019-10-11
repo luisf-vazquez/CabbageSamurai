@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Cabbage : MonoBehaviour
 {
-    
+
     public bool isActive { get; set; }
     private float verticalSpeed;
     private float horizontalSpeed;
     private float gravity = 2.0f;
-    private bool isCutted=false;
+    private bool isCutted = false;
     // Start is called before the first frame update
     private void Start()
     {
@@ -36,6 +36,10 @@ public class Cabbage : MonoBehaviour
         if(transform.position.y < -1)
         {
             isActive = false;
+            if (!isCutted)
+            {
+                Gamemanager.game.LoseLife();
+            }
         }
     }
 
@@ -50,6 +54,7 @@ public class Cabbage : MonoBehaviour
             horizontalSpeed = horizontalSpeed / 2;
 
             isCutted = true;
+            Gamemanager.game.incrementScore();
         }
         
     }
