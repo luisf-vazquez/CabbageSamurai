@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TitleScene.unity
     guid: 330576881fbbf544b92a11232f3d16a3
+  - enabled: 1
+    path: Assets/Scenes/PreLoader.unity
+    guid: b34855d28c2cdab40ab7b704abb5378f
   m_configObjects: {}

@@ -60,8 +60,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Cabbage\BlueCabbage.cs" />
     <Compile Include="Assets\Scripts\Cabbage\Cabbage.cs" />
+    <Compile Include="Assets\Scripts\Cabbage\RedCabbage.cs" />
+    <Compile Include="Assets\Scripts\Manager\ConfigurationSettings.cs" />
     <Compile Include="Assets\Scripts\Manager\Gamemanager.cs" />
+    <Compile Include="Assets\Scripts\Manager\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Scenes\SceneChanger.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/luisf/CabbageSamurai2.0/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

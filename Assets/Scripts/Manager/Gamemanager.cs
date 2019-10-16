@@ -10,12 +10,12 @@ public class Gamemanager : MonoBehaviour
 
     public GameObject cabbagePrefab;
     private float lastSpawn;
-    private float deltaSpawn = 1.0f;
+    private float deltaSpawn = 0.5f;
     public Transform trail;
     private Collider2D[] collsCabbages;
     private Vector3 lastMousePos;
     private int substractPoints;
-    private int incrementPoints;
+    //private int incrementPoints;
     private bool isPaused;
    
     public static Gamemanager game { get; set; }
@@ -52,7 +52,6 @@ public class Gamemanager : MonoBehaviour
         score = 0;
         lifePoints = 500;
         substractPoints = 100;
-        incrementPoints = 10;
         bestScore = PlayerPrefs.GetInt("MaxScore");
         isPaused = false;
         setScorePointsText();
@@ -145,7 +144,7 @@ public class Gamemanager : MonoBehaviour
         }
     }
 
-    public void incrementScore()
+    public void incrementScore(int incrementPoints)
     {
         score += incrementPoints;
         setScorePointsText();
