@@ -6,13 +6,47 @@ public class ConfigurationSettings : MonoBehaviour
 {
 
 
-    private static ConfigurationSettings instance;
+    public static ConfigurationSettings instance;
 
-    private ConfigurationSettings()
+    private string[] language = { "English" ,"Español"};
+    private int selectedLanguage=0;
+    private float dificulty=1;
+
+    public float getDificulty()
     {
+        float value=1;
+        switch (dificulty)
+        {
+            case 1:
+                value = 1.0f;
+                break;
+                
+            case 2:
+                value = 0.8f;
+                break;
 
+            case 3:
+                value = 0.7f;
+                break;
+        }
+        return value;
     }
 
+    public void setDificulty(float value)
+    {
+        dificulty = value;
+    }
+
+    public string getLanguage()
+    {
+        
+        return language[selectedLanguage];
+    }
+
+    public void setLanguage(int index)
+    {
+        selectedLanguage = index;
+    }
     void Awake()
     {
         //Check if instance already exists

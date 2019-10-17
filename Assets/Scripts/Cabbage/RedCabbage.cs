@@ -9,7 +9,7 @@ public class RedCabbage : MonoBehaviour
     public bool isActive { get; set; }
     private float verticalSpeed;
     private float horizontalSpeed;
-    private float gravity = 2.0f;
+    private float gravity = 2.5f;
     private bool isCutted = false;
     public SpriteRenderer Srenderer;
     private float lastSpriteUpdate;
