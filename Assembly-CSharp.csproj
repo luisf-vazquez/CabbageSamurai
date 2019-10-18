@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Manager\Settings.cs" />
     <Compile Include="Assets\Scripts\Manager\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Scenes\SceneChanger.cs" />
+    <Compile Include="Assets\Title.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/luisf/CabbageSamurai2.0/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

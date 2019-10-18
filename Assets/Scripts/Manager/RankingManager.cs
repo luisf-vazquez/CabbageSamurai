@@ -11,17 +11,24 @@ public class RankingManager : MonoBehaviour
     public Text ThirdbestScorePointsText;
     public Text FourthbestScorePointsText;
     public Text FifthbestScorePointsText;
-    // Start is called before the first frame update
+    public Text ReturnButtonText;
+    /// <summary>
+    /// Se le llama antes de actualizar el primer frame.
+    /// </summary>
     void Start()
     {
-        bestScorePointsText.text= "Best: "+ PlayerPrefs.GetInt("MaxScore");
+        Screen.orientation = ScreenOrientation.LandscapeLeft;
+        bestScorePointsText.text= (ConfigurationSettings.instance.getLanguage() == "Español" ? "Mejor: " : "Best: ") + PlayerPrefs.GetInt("MaxScore");
         SecondbestScorePointsText.text = "2: " + PlayerPrefs.GetInt("2MaxScore");
         ThirdbestScorePointsText.text = "3: " + PlayerPrefs.GetInt("3MaxScore");
         FourthbestScorePointsText.text = "4: " + PlayerPrefs.GetInt("4MaxScore");
         FifthbestScorePointsText.text = "5: " + PlayerPrefs.GetInt("5MaxScore");
+        ReturnButtonText.text = (ConfigurationSettings.instance.getLanguage() == "Español" ? "VOLVER" : "RETURN");
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Se le llama una vez por actualización de frame.
+    /// </summary>
     void Update()
     {
         

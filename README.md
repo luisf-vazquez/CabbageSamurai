@@ -11,3 +11,6 @@ Faltan la pantalla de ranking y configuración, así como añadir dos nuevas lec
 -- 17 Julio
 Subida de pantalla de ranking y configuración, añadidos nuevos objetos jugables ( Lechuga roja, Lechuga Azul y Brócoli )
 Quedan algunos bugs en la pantalla de configuración y hacer la documentación.
+
+-- 18 julio
+Subida final.

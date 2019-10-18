@@ -21,7 +21,7 @@ public class RedCabbage : MonoBehaviour
     public Sprite[] sprites;
     public int spriteIndex;
 
-    // Start is called before the first frame update
+    // Esta clase es igual a 'Cabbage' cambiando parámetros como el sprite, los puntos conseguidos y la velocidad
     private void Start()
     {
 
