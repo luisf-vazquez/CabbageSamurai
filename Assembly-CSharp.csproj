@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\Broccoli\BroccoliManager.cs" />
     <Compile Include="Assets\Scripts\Cabbage\BlueCabbage.cs" />
     <Compile Include="Assets\Scripts\Cabbage\Cabbage.cs" />
+    <Compile Include="Assets\Scripts\Cabbage\GreenCabbage.cs" />
     <Compile Include="Assets\Scripts\Cabbage\RedCabbage.cs" />
     <Compile Include="Assets\Scripts\Manager\ConfigurationSettings.cs" />
     <Compile Include="Assets\Scripts\Manager\Gamemanager.cs" />

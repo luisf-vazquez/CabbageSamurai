@@ -302,11 +302,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 258b7e7929880694ebc2e60d832aee08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cabbages: []
+  greenCabbages: []
   redCabbages: []
   blueCabbages: []
   broccolies: []
-  cabbagePrefab: {fileID: 7793578541926406875, guid: 347fba5e4eae4754cb113afe6abdda13,
+  cabbagePrefab: {fileID: 7503390663856869799, guid: 36502370c79520940b6ecab31e815766,
     type: 3}
   redCabbagePrefab: {fileID: 2993422891449101886, guid: f20200e096e256945af5fc2354d8afea,
     type: 3}
@@ -2614,7 +2614,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 595, y: -315}
+  m_AnchoredPosition: {x: 595, y: -293.22}
   m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1975846291

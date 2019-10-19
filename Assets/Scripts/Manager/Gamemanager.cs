@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Gamemanager : MonoBehaviour
 {
     
-    public List<Cabbage> cabbages = new List<Cabbage>();
+    public List<GreenCabbage> greenCabbages = new List<GreenCabbage>();
     public List<RedCabbage> redCabbages = new List<RedCabbage>();
     public List<BlueCabbage> blueCabbages = new List<BlueCabbage>();
     public List<BroccoliManager> broccolies = new List<BroccoliManager>();
@@ -21,7 +21,7 @@ public class Gamemanager : MonoBehaviour
     private float lastSpawn;
     private float deltaSpawn = 0.75f;
     
-    private Collider2D[] collsCabbages, collsRedCabbage, collsBlueCabbage, collsBroccoli;
+    private Collider2D[] collsGreenCabbage, collsRedCabbage, collsBlueCabbage, collsBroccoli;
     private Vector3 lastMousePos;
     private int substractPoints;
     private bool isPaused;
@@ -48,13 +48,13 @@ public class Gamemanager : MonoBehaviour
     /// Si no hay ningunoi disponible, creamos uno y lo añadimos a la lista.
     /// De esta forma evitamos que se agrande innecesariamente el número de objetos en memoria.
     /// </summary>
-    private Cabbage GetCabbage()
+    private GreenCabbage GetGreenCabbage()
     {
-        Cabbage c = cabbages.Find(x => !x.isActive);
+        GreenCabbage c = greenCabbages.Find(x => !x.isActive);
         if (c == null)
         {
-            c = Instantiate(cabbagePrefab).GetComponent<Cabbage>();
-            cabbages.Add(c);
+            c = Instantiate(cabbagePrefab).GetComponent<GreenCabbage>();
+            greenCabbages.Add(c);
         }
 
         return c;
@@ -162,11 +162,11 @@ public class Gamemanager : MonoBehaviour
         setBestScorePointsText();
         
 
-        foreach (Cabbage c in cabbages)
+        foreach (GreenCabbage c in greenCabbages)
         {
             Destroy(c.gameObject);
         }
-        cabbages.Clear();
+        greenCabbages.Clear();
 
         foreach (RedCabbage rc in redCabbages)
         {
@@ -203,7 +203,7 @@ public class Gamemanager : MonoBehaviour
     void Start()
     {
         Screen.orientation = ScreenOrientation.LandscapeLeft;
-        collsCabbages = new Collider2D[0];
+        collsGreenCabbage = new Collider2D[0];
         collsBlueCabbage = new Collider2D[0];
         collsRedCabbage = new Collider2D[0];
         collsBroccoli = new Collider2D[0];
@@ -240,7 +240,7 @@ public class Gamemanager : MonoBehaviour
         if (Time.time - lastSpawn > deltaSpawn)
         {
 
-            Cabbage cabbage = GetCabbage();
+            GreenCabbage cabbage = GetGreenCabbage();
             float randomX = Random.Range(-1.55f, 1.55f);
             float randomY = Random.Range(1.75f, 2.75f);
             cabbage.LaunchCabbage(randomY, randomX, -randomX);
@@ -251,7 +251,7 @@ public class Gamemanager : MonoBehaviour
                 RedCabbage RrCabbage = GetRedCabbage();
                 randomX = Random.Range(-1.55f, 1.55f);
                 randomY = Random.Range(1.75f, 2.75f);
-                RrCabbage.LaunchRedCabbage(randomY, randomX, -randomX);
+                RrCabbage.LaunchCabbage(randomY, randomX, -randomX);
 
             }
             else if (randomCabbage > 90)
@@ -259,7 +259,7 @@ public class Gamemanager : MonoBehaviour
                 BlueCabbage bCabbage = GetBlueCabbage();
                 randomX = Random.Range(-1.55f, 1.55f);
                 randomY = Random.Range(1.75f, 2.75f);
-                bCabbage.LaunchBlueCabbage(randomY, randomX, -randomX);
+                bCabbage.LaunchCabbage(randomY, randomX, -randomX);
 
             }
             else if (randomCabbage == 66 || randomCabbage == 33 || randomCabbage == 99)
@@ -282,7 +282,7 @@ public class Gamemanager : MonoBehaviour
             position.z = -1;
             trail.position = position;
             //Recogemos las áreas de colisión de todos los objetos en juego
-            Collider2D[] thisFrameCabbages = Physics2D.OverlapPointAll(new Vector2(position.x, position.y), LayerMask.GetMask("Cabbage"));
+            Collider2D[] thisFrameGreenCabbages = Physics2D.OverlapPointAll(new Vector2(position.x, position.y), LayerMask.GetMask("GreenCabbage"));
             Collider2D[] thisFrameRedCabbages = Physics2D.OverlapPointAll(new Vector2(position.x, position.y), LayerMask.GetMask("RedCabbage"));
             Collider2D[] thisFrameBlueCabbages = Physics2D.OverlapPointAll(new Vector2(position.x, position.y), LayerMask.GetMask("BlueCabbage"));
             Collider2D[] thisFrameBroccolies = Physics2D.OverlapPointAll(new Vector2(position.x, position.y), LayerMask.GetMask("Broccoli"));
@@ -290,14 +290,14 @@ public class Gamemanager : MonoBehaviour
             if ((Input.mousePosition - lastMousePos).sqrMagnitude >= minimum_cut_Speed)
             {
                 //Comprobamos si el trazo dibujado por el jugador encuentra algún çarea de colisión, y de esta forma, cortamos el objeto
-                foreach (Collider2D c2 in thisFrameCabbages)
+                foreach (Collider2D c2 in thisFrameGreenCabbages)
                 {
-                    for (int i = 0; i < collsCabbages.Length; i++)
+                    for (int i = 0; i < collsGreenCabbage.Length; i++)
                     {
-                        if (c2 == collsCabbages[i])
+                        if (c2 == collsGreenCabbage[i])
                         {
 
-                            c2.GetComponent<Cabbage>().CutCabbage();
+                            c2.GetComponent<GreenCabbage>().CutCabbage();
                             minusDeltaSpawn(1);
                         }
                     }
@@ -338,7 +338,7 @@ public class Gamemanager : MonoBehaviour
                     }
                 }
             }
-            collsCabbages = thisFrameCabbages;
+            collsGreenCabbage = thisFrameGreenCabbages;
 
             collsRedCabbage = thisFrameRedCabbages;
 

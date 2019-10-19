@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Oct 18 21:27:28 CEST 2019
+#Sat Oct 19 19:03:39 CEST 2019
 124.path=bin/Data/Managed/UnityEngine.AIModule.dll
 60.set=NATIVE_RESOURCE
 52.set=ASSET

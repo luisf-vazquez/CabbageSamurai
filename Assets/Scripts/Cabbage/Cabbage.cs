@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Cabbage : MonoBehaviour
 {
-
+    //De esta clase, heredan todos los tipos de lechuga
     public bool isActive { get; set; }
     public SpriteRenderer Srenderer;
     public Sprite[] sprites;
@@ -20,6 +20,30 @@ public class Cabbage : MonoBehaviour
     private float rotationSpeed;
     private int points = 1;
 
+
+    public float _gravity
+    {
+        get
+        {
+            return gravity;
+        }
+        set
+        {
+            gravity = value;
+        }
+    }
+
+    public int  __points
+    {
+        get
+        {
+            return points;
+        }
+        set
+        {
+            points = value;
+        }
+    }
     /// <summary>
     /// Se le llama antes de actualizar el primer frame.
     /// </summary>
